@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: Environment Template Schema
+  description: This specification wraps the Proton environment template bundle schema into a full OpenAPI spec.
+  version: 1.0.0
+paths:
+  /environment-spec:
+    put:
+      operationId: defineEnvironmentSpec
+      summary: Defines the format for the Proton environment spec to provide inputs for this Proton environment template.
+      requestBody:
+        description: The inputs for the Proton environment template, as defined in the environment spec.
+        required: true
+        content:
+          text/yaml:
+            schema:
+              $ref: "#/components/schemas/TemplateInputs"
+      responses:
+        '200':
+          description: The outputs of the Proton environment template.
+components:
+  schemas:
+    TemplateInputs:
+      type: object
+      properties:
+        proton:
+          type: string
+          enum: [EnvironmentSpec]
+          default: EnvironmentSpec
+      required:
+        - proton
+        - spec

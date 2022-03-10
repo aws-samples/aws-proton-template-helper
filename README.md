@@ -3,29 +3,31 @@ Unofficial collection of helper tools for interacting with AWS Proton
 
 # Installation
 ## Requirements
-* python3+ (recommended 3.3+)
+* python3 (requires 3.7+)
 * pip: https://pip.pypa.io/en/stable/installation/
+
+On Ubuntu/Debian systems, you may also need to install the following packages:
+```
+> sudo apt-get install python3-venv python3-wheel -y
+```
 
 ## Set Up Your Virtual Environment
 Virtual environments are recommended when working with python as it can become easy to mix up dependencies when globally managing them.
 
 ### Create the virtual environment
 ```
-# python3.3+
-> python -m venv env #venv comes prebundled with python3.3+, no need to install
-
-# < python3.3
-> python3 -m pip install --user virtualenv
-> python -m virtualenv env
+> python -m venv env
 ```
 
 ### Activate the virtual environment
-Once you activate your virtual environment, this will scope all future `pip` install to that environment. 
+Once you activate your virtual environment, this will scope all future `pip` install to that environment.
 
 ```
-# Same for all versions
-# Mac/Linux
+# Mac
 # > source env/Scripts/activate
+
+# Linux
+# > source env/bin/activate
 
 # Windows
 # > .\env\Scripts\Activate.ps1
@@ -41,6 +43,12 @@ Deactivating your virtual environment will reset to your standard shell. You wil
 ## Install
 ```
 > pip install aws-proton-helper
+```
+
+If you see an error like `invalid command 'bdist_wheel'`, try the following:
+```
+pip install wheel
+pip install --upgrade --no-deps --force-reinstall aws-proton-helper
 ```
 
 # Usage

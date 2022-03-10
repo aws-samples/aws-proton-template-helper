@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Service Template Schema
+  description: This specification wraps the Proton service template bundle schema into a full OpenAPI spec.
+  version: 1.0.0
+paths:
+  /service-spec:
+    put:
+      operationId: defineServiceSpec
+      summary: Defines the format for the Proton service spec to provide inputs for this Proton service template.
+      requestBody:
+        description: The inputs for the Proton service template, as defined in the service spec.
+        required: true
+        content:
+          text/yaml:
+            schema:
+              $ref: "#/components/schemas/TemplateInputs"
+      responses:
+        '200':
+          description: The outputs of the Proton service template.
+components:
+  schemas:
+    TemplateInputs:
+      type: object
+      properties:
+        proton:
+          type: string
+          enum: [ServiceSpec]
+          default: ServiceSpec
+        instances:
+          type: array
+          items:
+            $ref: "#/components/schemas/ServiceInstanceInputs"
+      required:
+        - proton
+        - instances
+    ServiceInstanceInputs:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          default: my-prod-service-instance
+        environment:
+          type: string
+          minLength: 1
+          default: my-prod-environment
+      required:
+        - name
+        - environment
+        - spec
