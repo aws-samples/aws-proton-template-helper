@@ -12,6 +12,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/awishn02/aws-proton-helper",
     packages=setuptools.find_packages(),
+    package_data={'': ['convert_schema/openapi_base_specs/*.yaml']},
+    include_package_data=True,
     classifiers=(
         "License :: OSI Approved :: Apache Software License",
     ),
@@ -20,7 +22,8 @@ setuptools.setup(
         'boto3',
         'jinja2',
         'jinja2schema',
-        'questionary'
+        'questionary',
+        'openapi-spec-validator'
     ],
     scripts=['bin/aws-proton-helper'],
 )
