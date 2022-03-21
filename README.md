@@ -71,3 +71,11 @@ function proton-helper { py C:\PATH\TO\env\Scripts\aws-proton-helper }
 
 # TODO
 * This is currently very coupled to Cloudformation + Jinja, that should be abstracted out
+
+## Security
+
+See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+
+## License
+
+This project is licensed under the Apache-2.0 License.
