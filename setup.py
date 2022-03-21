@@ -23,6 +23,7 @@ setuptools.setup(
         'jinja2',
         'jinja2schema',
         'questionary',
+        'openapi-core',
         'openapi-spec-validator'
     ],
     scripts=['bin/aws-proton-helper'],

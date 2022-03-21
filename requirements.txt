@@ -1,5 +1,6 @@
 Jinja2==3.0.3
 MarkupSafe==2.1.0
+openapi-core==0.14.2
 openapi-spec-validator==0.4.0
 prompt-toolkit==3.0.28
 PyYAML==6.0

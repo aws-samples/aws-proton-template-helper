@@ -4,7 +4,7 @@ info:
   description: This specification wraps the Proton service template bundle schema into a full OpenAPI spec.
   version: 1.0.0
 paths:
-  /service-spec:
+  /proton-spec:
     put:
       operationId: defineServiceSpec
       summary: Defines the format for the Proton service spec to provide inputs for this Proton service template.
@@ -13,6 +13,9 @@ paths:
         required: true
         content:
           text/yaml:
+            schema:
+              $ref: "#/components/schemas/TemplateInputs"
+          application/json:
             schema:
               $ref: "#/components/schemas/TemplateInputs"
       responses:
