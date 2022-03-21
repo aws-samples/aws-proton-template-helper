@@ -4,7 +4,7 @@ info:
   description: This specification wraps the Proton environment template bundle schema into a full OpenAPI spec.
   version: 1.0.0
 paths:
-  /environment-spec:
+  /proton-spec:
     put:
       operationId: defineEnvironmentSpec
       summary: Defines the format for the Proton environment spec to provide inputs for this Proton environment template.
@@ -13,6 +13,9 @@ paths:
         required: true
         content:
           text/yaml:
+            schema:
+              $ref: "#/components/schemas/TemplateInputs"
+          application/json:
             schema:
               $ref: "#/components/schemas/TemplateInputs"
       responses:
