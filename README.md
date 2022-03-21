@@ -1,5 +1,5 @@
 # AWS Proton Helper
-Unofficial collection of helper tools for interacting with AWS Proton
+Collection of helper tools for interacting with AWS Proton templates
 
 # Installation
 ## Requirements
