@@ -1,0 +1,18 @@
+Resources:
+  PipelineInput:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "{{ pipeline.inputs.my_sample_input }}"
+  ServiceName:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "{{ service.name }}"
+  {% for service_instance in service_instances %}
+  Param{{ service_instance.name }}:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "{{ service_instance.inputs.my_sample_input }}"
+  {% endfor %}

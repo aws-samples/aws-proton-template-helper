@@ -1,0 +1,10 @@
+proton: ServiceSpec
+
+pipeline:
+  my_sample_input: "hello"
+
+instances:
+  - name: "acme-network-dev"
+    environment: "lambda-multi-svc-env"
+    spec:
+      my_sample_input: "hi"

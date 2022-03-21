@@ -1,0 +1,26 @@
+Resources:
+  StoreInputValue:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "{{ service_instance.inputs.my_sample_input}}"
+  StoreInstanceName:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "{{ service_instance.name}}"
+  StoreEnvironmentName:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "{{ environment.name}}"
+  StoreEnvironmentOutput:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "{{ environment.outputs.AppBucketArn }}"
+  StoreServiceRepo:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "{{ service.name }}"
