@@ -129,8 +129,14 @@ def validate_spec_against_template_schema():
     )
 
     result = validator.validate(request)
-    result.raise_for_errors()
-    questionary.print('The spec file is valid against the template schema')
+    errors = result.errors
+    if errors:
+        for err in errors:
+            for schema_err in err.schema_errors:
+                print(schema_err)
+        questionary.print('The spec file is not valid')
+    else:
+        questionary.print('The spec file is valid against the template schema')
 
 # Wrap the Proton template bundle schema into a full OpenAPI specification, validate it, write it to a file
 def convert_template_schema_to_openapi_spec(outputToFile=True):
