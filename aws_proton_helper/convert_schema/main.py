@@ -131,10 +131,10 @@ def validate_spec_against_template_schema():
     result = validator.validate(request)
     errors = result.errors
     if errors:
-        for err in errors:
-            for schema_err in err.schema_errors:
-                print(schema_err)
         questionary.print('The spec file is not valid')
+        for err in errors:
+            for i, schema_err in enumerate(err.schema_errors):
+                print(f'\nERROR #{i + 1}:\n{schema_err}')
     else:
         questionary.print('The spec file is valid against the template schema')
 
