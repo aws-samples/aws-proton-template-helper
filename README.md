@@ -42,7 +42,7 @@ Deactivating your virtual environment will reset to your standard shell. You wil
 
 ## Install
 ```
-> pip install aws-proton-helper
+> pip install .
 ```
 
 If you see an error like `invalid command 'bdist_wheel'`, try the following:
