@@ -48,13 +48,13 @@ Deactivating your virtual environment will reset to your standard shell. You wil
 If you see an error like `invalid command 'bdist_wheel'`, try the following:
 ```
 pip install wheel
-pip install --upgrade --no-deps --force-reinstall aws-proton-helper
+pip install --upgrade --no-deps --force-reinstall aws-proton-template-helper
 ```
 
 # Usage
 Just type the following and the command will walk you through the rest.
 ```
-> aws-proton-helper
+> aws-proton-template-helper
 ```
 
 ## Common Workflows
@@ -68,13 +68,13 @@ I'm not very well versed in windows development so this may not be the most effi
 This assumes you have the [windows python launcher](https://docs.python.org/3/using/windows.html) set up and also that you are in the virtual environment we set up above.
 
 ```
-> py env\Scripts\aws-proton-helper
+> py env\Scripts\aws-proton-template-helper
 ```
 
 You can also create a function in your powershell profile so that you don't have to remember the path every time.
 
 ```
-function proton-helper { py C:\PATH\TO\env\Scripts\aws-proton-helper }
+function proton-helper { py C:\PATH\TO\env\Scripts\aws-proton-template-helper }
 ```
 
 # TODO
